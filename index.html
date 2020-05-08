@@ -46,7 +46,7 @@
 		function rdrClick() {
 			OneSignal.push(function () {
 				OneSignal.sendTag("rdr2Notification", "1").then(function (tagsSent) {
-					console.log("tags",tagsSent.rdr2Notification)
+					console.log("tags", tagsSent.rdr2Notification)
 				})
 			})
 		}
@@ -54,14 +54,14 @@
 		function mabClick() {
 			OneSignal.push(function () {
 				OneSignal.sendTag("rdr2Notification", "1").then(function (tagsSent) {
-					console.log("tags",tagsSent.rdr2Notification)
+					console.log("tags", tagsSent.rdr2Notification)
 				})
 			})
 		}
 
-		function listTags(){
-			OneSignal.push(function(){
-				OneSignal.getTags(function(tags){
+		function listTags() {
+			OneSignal.push(function () {
+				OneSignal.getTags(function (tags) {
 					document.getElementById("tags").innerHTML = JSON.stringify(tags)
 				})
 			})
