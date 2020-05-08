@@ -32,9 +32,9 @@
 	</script>
 	<div>Test push</div>
 	<div>
-		<button onclick="rdrClick()" id="button">Red dead redemption</button>
+		<button onclick="rdrClick()" id="button">Red Dead Redemption</button>
 		<br />
-		<button onclick="mabClick()" id="button">Mount and blade : bannerlord</button>
+		<button onclick="mabClick()" id="button">Mount and Blade Bannerlord</button>
 		<br />
 		<button onclick="listTags()" id="button">List tags</button>
 	</div>
@@ -53,7 +53,7 @@
 
 		function mabClick() {
 			OneSignal.push(function () {
-				OneSignal.sendTag("rdr2Notification", "1").then(function (tagsSent) {
+				OneSignal.sendTag("mab2Notification", "1").then(function (tagsSent) {
 					console.log("tags", tagsSent.rdr2Notification)
 				})
 			})
