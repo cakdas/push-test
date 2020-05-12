@@ -8,7 +8,7 @@
 		var OneSignal = window.OneSignal || [];
 		OneSignal.push(function () {
 			OneSignal.init({
-				appId: "cf91a970-1be7-41c2-bfc6-216f9a35b2c7",
+				appId: "1df5324b-5b03-4d7d-8711-1f1467d122d7",
 			});
 		});
 	</script>
@@ -42,6 +42,13 @@
 		<div>Tags</div>
 		<div id="tags"></div>
 	</div>
+	<div>
+		<div>Email</div>
+		<input id="user-email" type="email" value="" placeholder="Email" />
+		<div>Name</div>
+		<input id="user-name" type="email" value="" placeholder="Email" />
+		<button onclick="setEmail()" id="button">List tags</button>
+	</div>
 	<script>
 		function rdrClick() {
 			OneSignal.push(function () {
@@ -64,6 +71,17 @@
 				OneSignal.getTags(function (tags) {
 					document.getElementById("tags").innerHTML = JSON.stringify(tags)
 				})
+			})
+		}
+
+		function setEmail() {
+			var email = document.getElementById("user-email").value;
+			var name = document.getElementById("user-name").value;
+			OneSignal.push(function () {
+				OneSignal.sendTag("user_name", name).then(function (tagsSent) {
+					console.log("tags", tagsSent)
+				})
+				OneSignal.setEmail(email);
 			})
 		}
 	</script>
